@@ -21,9 +21,9 @@ config.window_padding = window_padding
 config.default_prog = { "nu" }
 
 -- Install from https://www.nerdfonts.com/font-downloads
-config.font = wezterm.font("Terminess Nerd Font Mono")
--- config.font = wezterm.font("ShureTechMono Nerd Font Mono")
--- config.font_size =
+-- config.font = wezterm.font("Terminess Nerd Font Mono")
+config.font = wezterm.font("ShureTechMono Nerd Font Mono")
+config.font_size = 9.75
 
 config.leader = { key = "Space", mods = "CTRL" }
 config.keys = require("config.keys")

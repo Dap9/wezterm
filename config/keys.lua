@@ -1,6 +1,7 @@
 local wezterm = require("wezterm")
 
 local M = {
+  -- Pane splitting
   {
     key = "v",
     mods = "LEADER",
@@ -8,7 +9,6 @@ local M = {
       direction = "Right",
     }),
   },
-
   {
     key = "v",
     mods = "LEADER|SHIFT",
@@ -24,13 +24,33 @@ local M = {
       direction = "Down",
     }),
   },
-
   {
     key = "s",
     mods = "LEADER|SHIFT",
     action = wezterm.action.SplitPane({
       direction = "Up",
     }),
+  },
+
+  {
+    key = "h",
+    mods = "LEADER",
+    action = wezterm.action.ActivatePaneDirection("Left"),
+  },
+  {
+    key = "j",
+    mods = "LEADER",
+    action = wezterm.action.ActivatePaneDirection("Down"),
+  },
+  {
+    key = "k",
+    mods = "LEADER",
+    action = wezterm.action.ActivatePaneDirection("Down"),
+  },
+  {
+    key = "l",
+    mods = "LEADER",
+    action = wezterm.action.ActivatePaneDirection("Right"),
   },
 
   {
