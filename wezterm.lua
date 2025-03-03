@@ -5,6 +5,9 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 config.color_scheme = "tokyonight_night"
+
+config.default_cursor_style = "SteadyBar"
+
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
 config.enable_scroll_bar = false
