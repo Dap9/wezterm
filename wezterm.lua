@@ -31,6 +31,8 @@ config.font_size = 9.75
 config.leader = { key = "Space", mods = "CTRL" }
 config.keys = require("config.keys")
 
+config.window_decorations = "RESIZE"
+
 wezterm.on("gui-startup", function(cmd)
   local tab, pane, window = wezterm.mux.spawn_window(cmd or {})
   window:gui_window():maximize()
