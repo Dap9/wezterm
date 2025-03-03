@@ -45,7 +45,7 @@ local M = {
   {
     key = "k",
     mods = "LEADER",
-    action = wezterm.action.ActivatePaneDirection("Down"),
+    action = wezterm.action.ActivatePaneDirection("Up"),
   },
   {
     key = "l",
@@ -54,11 +54,32 @@ local M = {
   },
 
   {
+    key = "h",
+    mods = "LEADER|SHIFT",
+    action = wezterm.action.AdjustPaneSize({ "Left", 5 }),
+  },
+  {
+    key = "j",
+    mods = "LEADER|SHIFT",
+    action = wezterm.action.AdjustPaneSize({ "Down", 5 }),
+  },
+  {
+    key = "k",
+    mods = "LEADER|SHIFT",
+    action = wezterm.action.AdjustPaneSize({ "Up", 5 }),
+  },
+  {
+    key = "l",
+    mods = "LEADER|SHIFT",
+    action = wezterm.action.AdjustPaneSize({ "Right", 5 }),
+  },
+
+  -- Tab
+  {
     key = "c",
     mods = "LEADER",
     action = wezterm.action.SpawnTab("CurrentPaneDomain"),
   },
-
   {
     key = "n",
     mods = "LEADER",
@@ -68,7 +89,21 @@ local M = {
     key = "p",
     mods = "LEADER",
     action = wezterm.action.ActivateTabRelative(-1),
-  }
+  },
+
+  -- Focus pane
+  {
+    key = "f",
+    mods = "LEADER",
+    action = wezterm.action.TogglePaneZoomState,
+  },
+
+  -- VI mode for copying & traversing
+  {
+    key = "[",
+    mods = "LEADER",
+    action = wezterm.action.ActivateCopyMode,
+  },
 }
 
 return M
