@@ -53,26 +53,26 @@ local M = {
     action = wezterm.action.ActivatePaneDirection("Right"),
   },
 
-  {
-    key = "h",
-    mods = "LEADER|SHIFT",
-    action = wezterm.action.AdjustPaneSize({ "Left", 5 }),
-  },
-  {
-    key = "j",
-    mods = "LEADER|SHIFT",
-    action = wezterm.action.AdjustPaneSize({ "Down", 5 }),
-  },
-  {
-    key = "k",
-    mods = "LEADER|SHIFT",
-    action = wezterm.action.AdjustPaneSize({ "Up", 5 }),
-  },
-  {
-    key = "l",
-    mods = "LEADER|SHIFT",
-    action = wezterm.action.AdjustPaneSize({ "Right", 5 }),
-  },
+  -- {
+  --   key = "h",
+  --   mods = "LEADER|SHIFT",
+  --   action = wezterm.action.AdjustPaneSize({ "Left", 5 }),
+  -- },
+  -- {
+  --   key = "j",
+  --   mods = "LEADER|SHIFT",
+  --   action = wezterm.action.AdjustPaneSize({ "Down", 5 }),
+  -- },
+  -- {
+  --   key = "k",
+  --   mods = "LEADER|SHIFT",
+  --   action = wezterm.action.AdjustPaneSize({ "Up", 5 }),
+  -- },
+  -- {
+  --   key = "l",
+  --   mods = "LEADER|SHIFT",
+  --   action = wezterm.action.AdjustPaneSize({ "Right", 5 }),
+  -- },
 
   -- Tab
   {
