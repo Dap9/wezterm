@@ -43,39 +43,7 @@ config.keys = require("config.keys")
 --   -- tab:set_title(process_name or "nu")
 -- end)
 
-local function get_process(tab)
-  local process_name = tab.active_pane.foreground_process_name:match("([^/\\]+)%.exe$")
-    or tab.active_pane.foreground_process_name:match("([^/\\]+)$")
-
-  -- local icon = process_icons[process_name] or string.format('[%s]', process_name)
-  local icon = process_icons[process_name] or wezterm.nerdfonts.seti_checkbox_unchecked
-
-  return icon
-end
-
-wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-  local has_unseen_output = false
-  local is_zoomed = false
-
-  for _, pane in tab.panes do
-    if not tab.is_active and pan.has_unseen_output then
-      has_unseen_output = true
-    end
-
-    if pane.is_zoomed then
-      is_zoomed = true
-    end
-  end
-
-  local process_name = get_process(tab)
-  local zoom_icon = is_zoomed and wezterm.nerdfonts.cod_zoom_in or ""
-
-  local title = string.format(" %s ~ %s ", process_name, zoom_icon)
-
-  return wezterm.font({
-    { Text = title },
-  })
-end)
+require("config.tabs")
 
 local smart_splits = wezterm.plugin.require("https://github.com/mrjones2014/smart-splits.nvim")
 -- you can put the rest of your Wezterm config here
@@ -100,5 +68,8 @@ smart_splits.apply_to_config(config, {
   -- log level to use: info, warn, error
   log_level = "info",
 })
+
+-- Plugin for wezterm + nvim integration
+-- include tab title support
 
 return config
